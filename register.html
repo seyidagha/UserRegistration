@@ -1,0 +1,275 @@
+<html>
+
+<head>
+    <title>
+        Registration Form
+    </title>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+
+    <style>
+        body {
+            background-image: url(bg.jpg);
+            background-size: cover;
+        }
+
+        .divider-text {
+            position: relative;
+            text-align: center;
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
+        .divider-text span {
+            padding: 7px;
+            font-size: 12px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .divider-text:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            border-bottom: 1px solid #ddd;
+            top: 55%;
+            left: 0;
+            z-index: 1;
+        }
+
+        .btn-facebook {
+            background-color: #405D9D;
+            color: #fff;
+        }
+
+        .btn-twitter {
+            background-color: #42AEEC;
+            color: #fff;
+        }
+
+        .text-danger {
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <div class="">
+        <nav class="navbar navbar-dark navbar-expand-lg bg-primary">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <a class="navbar-brand" href="#">Users App</a>
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0 nav-tabs">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="register.html">Registration Page <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="users.php">Users Page</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    <div class="container jumbotron text-center">
+        <div class="h2 display-2">Please Register</div>
+    </div>
+
+    <div class="container">
+
+        <div class="card bg-light">
+            <article class="card-body mx-auto" style="max-width: 400px;">
+                <h4 class="card-title mt-3 text-center">Create Account</h4>
+                <p class="text-center">Get started with your free account</p>
+                <p>
+                    <a href="" class="btn btn-block btn-twitter"> <i class="fab fa-twitter"></i> Login via Twitter</a>
+                    <a href="" class="btn btn-block btn-facebook"> <i class="fab fa-facebook-f"></i> Login via facebook</a>
+                </p>
+                <p class="divider-text">
+                    <span class="bg-light">OR</span>
+                </p>
+                <form id="form" action="complete.php" method="post" enctype="multipart/form-data">
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                        </div>
+                        <input name="name" id="name" class="form-control" placeholder="Full name" type="text" value="John">
+
+                    </div> <!-- form-group// -->
+                    <p class="error_msg text-danger" id="name_msg"></p>
+
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                        </div>
+                        <input id="email" name="email" class="form-control" placeholder="Email address" type="email" value="john@gmail.com">
+                    </div> <!-- form-group// -->
+                    <p class="error_msg text-danger" id="email_msg"></p>
+
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                        </div>
+                        <select name="prefix" class="custom-select" style="max-width: 120px;">
+                            <option selected="">+994</option>
+                            <option value="1">+90</option>
+                            <option value="2">+198</option>
+                            <option value="3">+701</option>
+                        </select>
+                        <input id="phone" name="phone" class="form-control" placeholder="Phone number" type="text" value="1234567">
+                    </div> <!-- form-group// -->
+                    <p class="error_msg text-danger" id="phone_msg"></p>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-building"></i> </span>
+                        </div>
+                        <select class="form-control" name="job_title">
+                            <option selected="" value="not set"> Select job type</option>
+                            <option>Designer</option>
+                            <option>Manager</option>
+                            <option>Developer</option>
+                        </select>
+                    </div> <!-- form-group end.// -->
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input id="password" class="form-control" placeholder="Create password" type="password" name="password" value="123456">
+                    </div> <!-- form-group// -->
+                    <p class="error_msg text-danger" id="pass_msg"></p>
+
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                        </div>
+                        <input id="passrepeat" class="form-control" placeholder="Repeat password" type="password" name="passrepeat" value="123456">
+                    </div> <!-- form-group// -->
+                    <p class="error_msg text-danger" id="passrepeat_msg"></p>
+
+                    <label class="font-weight-bold" for="fileToUpload">Choose a profile picture:</label>
+                    <div class="form-group input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"> <i class="fas fa-user-tie"></i> </span>
+                        </div>
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                    </div> <!-- form-group// -->
+
+
+
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block"> Create Account </button>
+                    </div> <!-- form-group// -->
+                    <p class="text-center">Have an account? <a href="">Log In</a> </p>
+                </form>
+            </article>
+        </div> <!-- card.// -->
+
+    </div>
+    <!--container end.//-->
+
+    <br><br>
+
+
+
+    <script>
+        document.getElementById("form").addEventListener("submit", validate);
+
+        function error_message(id, message) {
+            document.getElementById(id).innerHTML = message;
+        }
+
+        function validate(event) {
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var phone = document.getElementById("phone").value.trim();
+            var password = document.getElementById("password").value.trim();
+            var passrepeat = document.getElementById("passrepeat").value.trim();
+
+            if (name == "") {
+                error_message("name_msg", "Please enter your name");
+                event.preventDefault();
+                return;
+            } else {
+                if (name.length < 3) {
+                    error_message("name_msg", "Please enter the name which has more than 6 letters.");
+                    event.preventDefault();
+                    return;
+                } else {
+                    error_message("name_msg", "");
+                }
+            }
+
+
+            if (email == "") {
+                error_message("email_msg", "Please enter your email address");
+                event.preventDefault();
+                return;
+            } else {
+                if (email.indexOf("@") == -1 || email.length < 6) {
+                    error_message("email_msg", "Please enter the valid email address");
+                    event.preventDefault();
+                    return;
+                } else {
+                    error_message("email_msg", "")
+                }
+            }
+
+            if (phone == "") {
+                error_message("phone_msg", "Please enter your phone number");
+                event.preventDefault();
+                return;
+            } else {
+                if (isNaN(phone) || phone.length < 7) {
+                    error_message("phone_msg", "Please enter the valid phone number");
+                    event.preventDefault();
+                    return;
+                } else {
+                    error_message("phone_msg", "")
+                }
+            }
+
+            if (password == "") {
+                error_message("pass_msg", "Please enter your password");
+                event.preventDefault();
+                return;
+            } else {
+                if (password.length < 6) {
+                    error_message("pass_msg", "Please enter the password longer than 5 symbols");
+                    event.preventDefault();
+                    return;
+                } else {
+                    error_message("pass_msg", "")
+                }
+            }
+
+            if (passrepeat == "") {
+                error_message("passrepeat_msg", "Please repeat your password");
+                event.preventDefault();
+                return;
+            } else {
+                if (password != passrepeat) {
+                    error_message("passrepeat_msg", "Repeat password is wrong!");
+                    event.preventDefault();
+                    return;
+                } else {
+                    error_message("passrepeat_msg", "")
+                }
+            }
+
+
+        }
+
+    </script>
+</body>
+
+</html>
